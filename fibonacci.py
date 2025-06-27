@@ -12,7 +12,7 @@ def fibonacci_recursao(n):
     else:
         return fibonacci_recursao(n-1) + fibonacci_recursao(n-2)
 
-# Imprimindo os primeiros 10 termos usando o loop
+# Imprimindo os primeiros 10 termos usando o loo
 print("Sequência de Fibonacci (loop):")
 for numero in fibonacci_loop(10):
     print(numero, end=" ")
