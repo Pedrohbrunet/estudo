@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 # Usando loop
 def fibonacci_loop(n):
     a, b = 0, 1
@@ -12,11 +14,21 @@ def fibonacci_recursao(n):
     else:
         return fibonacci_recursao(n-1) + fibonacci_recursao(n-2)
 
-# Imprimindo os primeiros 10 termos usando o loo
-print("Sequência de Fibonacci (loop):")
-for numero in fibonacci_loop(10):
-    print(numero, end=" ")
-print("\n")
+# Número de termos
+n = 10
 
-# Imprimindo o 10º termo usando a recursão
-print("10º termo da Sequência de Fibonacci (recursão):", fibonacci_recursao(10 - 1))
+# Gerar sequência
+fibonacci_numeros = list(fibonacci_loop(n))
+
+# Exibir sequência no terminal
+print("Sequência de Fibonacci (loop):")
+print(fibonacci_numeros)
+print("\n10º termo da Sequência de Fibonacci (recursão):", fibonacci_recursao(n - 1))
+
+# Criar gráfico
+plt.plot(range(n), fibonacci_numeros, marker='o', linestyle='-', color='blue')
+plt.title('Sequência de Fibonacci')
+plt.xlabel('Índice (n)')
+plt.ylabel('Valor de Fibonacci')
+plt.grid(True)
+plt.show()
